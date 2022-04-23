@@ -104,6 +104,30 @@ public class SingleLinkedList {
     }
 
     /**
+     * 单链表反转
+     */
+    public static void reverse(HeroNode head) {
+        // 如果链表为空或者有效长度为1则直接返回
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        HeroNode firstNode = head.next;
+        while (firstNode != null) {
+            HeroNode cur = new HeroNode();
+            cur.no = firstNode.no;
+            cur.name = firstNode.name;
+            cur.nickName = firstNode.nickName;
+
+            cur.next = reverseHead.next;
+            reverseHead.next = cur;
+            // 将原始链表中的第一个有效节点摘除
+            firstNode = firstNode.next;
+        }
+        head.next = reverseHead.next;
+    }
+
+    /**
      * 遍历单链表,不包含头节点
      */
     public void list() {
@@ -126,11 +150,14 @@ public class SingleLinkedList {
 //        singleLinkedList.add(hero4);
         singleLinkedList.addByOrder(hero4);
         singleLinkedList.addByOrder(hero3);
-        singleLinkedList.addByOrder(hero4);
         singleLinkedList.addByOrder(hero2);
         singleLinkedList.addByOrder(hero1);
-        singleLinkedList.update(new HeroNode(2, "小卢", "玉麒麟~~"));
-        singleLinkedList.delete(1);
+//        singleLinkedList.update(new HeroNode(2, "小卢", "玉麒麟~~"));
+//        singleLinkedList.delete(1);
+        System.out.println("原始链表遍历~~");
+        singleLinkedList.list();
+        reverse(singleLinkedList.head);
+        System.out.println("反转后链表遍历~~");
         singleLinkedList.list();
     }
 }
@@ -163,6 +190,10 @@ class HeroNode {
         this.no = no;
         this.name = name;
         this.nickName = nickName;
+    }
+
+    public HeroNode() {
+
     }
 
     @Override
