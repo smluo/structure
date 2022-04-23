@@ -118,7 +118,7 @@ public class SingleLinkedList {
             cur.no = firstNode.no;
             cur.name = firstNode.name;
             cur.nickName = firstNode.nickName;
-
+            // 将cur插入到reverseHead头节点和reverseLinkedList第一个节点之间
             cur.next = reverseHead.next;
             reverseHead.next = cur;
             // 将原始链表中的第一个有效节点摘除
