@@ -131,7 +131,7 @@ class Node {
     }
 }
 
-class Test {
+class DoubleLinkedListTest {
     public static void main(String[] args) {
         DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
         Node hero1 = new Node(1, "宋江");

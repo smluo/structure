@@ -1,5 +1,7 @@
 package com.linear.linkedlist;
 
+import static com.linear.linkedlist.SingleLinkedList.reverse;
+
 /**
  * 单链表
  *
@@ -137,29 +139,6 @@ public class SingleLinkedList {
             System.out.println(tmp.toString());
         }
     }
-
-    public static void main(String[] args) {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
-        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
-        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
-        HeroNode hero4 = new HeroNode(4, "公孙胜", "入云龙");
-//        singleLinkedList.add(hero1);
-//        singleLinkedList.add(hero2);
-//        singleLinkedList.add(hero3);
-//        singleLinkedList.add(hero4);
-        singleLinkedList.addByOrder(hero4);
-        singleLinkedList.addByOrder(hero3);
-        singleLinkedList.addByOrder(hero2);
-        singleLinkedList.addByOrder(hero1);
-//        singleLinkedList.update(new HeroNode(2, "小卢", "玉麒麟~~"));
-//        singleLinkedList.delete(1);
-        System.out.println("原始链表遍历~~");
-        singleLinkedList.list();
-        reverse(singleLinkedList.head);
-        System.out.println("反转后链表遍历~~");
-        singleLinkedList.list();
-    }
 }
 
 /**
@@ -199,5 +178,29 @@ class HeroNode {
     @Override
     public String toString() {
         return "HeroNode{" + "no=" + no + ", name=" + name + ", nickName=" + nickName + '}';
+    }
+}
+class SingleLinkedListTest {
+    public static void main(String[] args) {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4, "公孙胜", "入云龙");
+//        singleLinkedList.add(hero1);
+//        singleLinkedList.add(hero2);
+//        singleLinkedList.add(hero3);
+//        singleLinkedList.add(hero4);
+        singleLinkedList.addByOrder(hero4);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
+        singleLinkedList.addByOrder(hero1);
+//        singleLinkedList.update(new HeroNode(2, "小卢", "玉麒麟~~"));
+//        singleLinkedList.delete(1);
+        System.out.println("原始链表遍历~~");
+        singleLinkedList.list();
+        reverse(singleLinkedList.head);
+        System.out.println("反转后链表遍历~~");
+        singleLinkedList.list();
     }
 }
