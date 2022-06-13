@@ -19,8 +19,12 @@ public class BinarySearch {
         if (left > right) {
             return -1;
         }
-
-        int midIndex = (left + right) / 2;
+        int midIndex = 0;
+        try {
+            midIndex = (left + right) / 2;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (target > array[midIndex]) {
             return BinarySearch(array, midIndex + 1, right, target);
         } else if (target < array[midIndex]) {
@@ -37,8 +41,10 @@ public class BinarySearch {
         return BinarySearch(array, 0, array.length - 1, target);
     }
     public static void main(String[] args) {
-        int[] arr = {-1, 3, 5, 7, 8, 12, 15};
-        System.out.println(find(arr, 12));
-        System.out.println(find(arr, 40));
+//        int[] arr = {-1, 3, 5, 7, 8, 12, 15};
+//        System.out.println(find(arr, 12));
+//        System.out.println(find(arr, 40));
+        String str = "";
+        System.out.println(str == "");
     }
 }
